@@ -1,6 +1,6 @@
 Step by step installasi : 
 1. Buka command prompt pada laptop kalian
-2. Pindah path folder ke folder yg terdapat install.py ini
+2. Pindah path folder ke folder yg terdapat install.py ini (udah di clone githubnya)
 3. Pastikan bahwa PIP python telah terinstall pada laptop kalian pasti udah sih.
 4. Jalankan : pip install virtualenv
 5. Jalankan : py -m venv webEnv 
@@ -13,3 +13,20 @@ Step by step installasi :
 12. Jalankan : flask db upgrade
 13. Jalankan : py app.py
 14. Moga-moga jalan
+
+Step by step installasi dengan install github juga: 
+1. Buka command prompt pada laptop kalian
+2. Pindah path folder ke folder yg kalian mau jadiin folder kalian
+3. Jalankan : git clone "https://github.com/JeffTimoman/colorUsAIProject"
+4. Jalankan : cd colorUsAIProject
+5. Jalankan : pip install virtualenv
+6. Jalankan : py -m venv webEnv 
+7. Jalankan : webEnv\Scripts\activate
+8. Buka File config.py pada folder webdata, lalu isi API_TOKEN kalian denegan yang kalian pakai.
+9. Buka PHPMyAdmin kalian lalu buat database namanya colorus
+10. Pastikan di pojok kiri path cmd kalian tertulis (webEnv), lalu jalankan : pip install -r requirements.txt
+11. Jalankan : flask db init
+12. Jalankan : flask db migrate
+13. Jalankan : flask db upgrade
+14. Jalankan : py app.py
+15. Moga-moga jalan
