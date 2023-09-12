@@ -65,15 +65,16 @@ body{
 
 
     position: relative;
-    width: 100%;
+    width: 90%;
     height: 100%;
     --position: 50%;
 
 }
 
 #image-comparison-slider img{
-    width: 90%;
+    width: 100%;
     height: auto;
+    max-height: 100%;
 
     position: absolute;
     top: 50%;
