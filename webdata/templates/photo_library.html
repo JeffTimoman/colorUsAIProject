@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/photo_library.css')}}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <style>
+
+    </style>
+    <div class="container">
+        <div class="content-wrapper">
+            
+            <div class="menu-popup" id="sidebar">
+                <ul>
+                    <li><a href="{{url_for('main.index')}}">Home</a></li>
+                    <li><a href="{{url_for('main.add_photo')}}">Add Photo</a></li>
+                    <li><a href="{{url_for('main.photo_library')}}">Photo Library</a></li>
+                </ul>
+            </div>
+            
+            <div class="content-header">
+                <div class="nav-content menu-button">
+                    <img src="{{url_for('static', filename='img/photo_library/HamMenu.png')}}" alt="">
+                </div>
+                <div class="nav-content-2">
+                    <img src="{{url_for('static', filename='img/photo_library/Share.png')}}" alt="">
+                    <a href="{{url_for('main.add_photo')}}">
+                        <img src="{{url_for('static', filename='img/photo_library/camera.png')}}" alt="">
+                    </a>
+                    <button>
+                        <img src="{{url_for('static', filename='img/photo_library/Download.png')}}" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="content-body">
+                <div class="image-card">
+                    <a href="{{url_for('main.add_photo')}}">
+                        <img src="{{url_for('static', filename='img/photo_library/Box_Camera.png')}}" alt="">
+                    </a>
+                </div>
+                {% for result in results %}
+                    <div class="image-card">
+                        <a href="{{url_for('main.photo_details', id=result.id)}}">
+                            <img src="{{url_for('static', filename='/uploads')}}/{{result.result_link_name}}" alt="">
+                        </a>
+                    </div>
+                {% endfor %}
+                {% for ola in range(total) %}
+                    <div class="image-card">
+
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="content-footer">
+                <a href="{{url_for('main.index')}}">
+                    <img src="{{url_for('static', filename='img/photo_library/FinishButton.png')}}" alt="">
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $(document).ready(function() {
+            var $menuButton = $(".menu-button");
+            var $menuPopup = $(".menu-popup");
+
+            $menuButton.click(function() {
+                $menuPopup.toggleClass("active");
+            });
+        });
+    </script>
+</body>
+</html>
+

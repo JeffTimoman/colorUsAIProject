@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Us</title>
+    <!-- font awesome import -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Source+Sans+3:wght@700&display=swap" rel="stylesheet"> 
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/index.css')}}">
+</head>
+<body>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="menu-popup" id="sidebar">
+                <ul>
+                    <li><a href="{{url_for('main.index')}}">Home</a></li>
+                    <li><a href="{{url_for('main.add_photo')}}">Add Photo</a></li>
+                    <li><a href="{{url_for('main.photo_library')}}">Photo Library</a></li>
+                </ul>
+            </div>
+            <div class="navbar">
+                <div class="nav-ham">
+                    <div class="menu-button">
+                        <i class="fa-solid fa-bars fa-lg "></i>
+                    </div>
+                </div>
+                <img src="{{url_for('static', filename='/img/color-us-logo.png')}}" alt="logo">
+            </div>
+            <div class="content-body">
+                <div class="content-intro">
+                    <img src="{{url_for('static', filename='/img/index/welcome-to-color-us.png')}}" alt="">
+                    <img src="{{url_for('static', filename='/img/index/photocard.png')}}" alt="">
+                </div>
+                <div class="content-text">
+                    Scan your Black & White photos to start colorizing them.
+                </div>
+            </div>
+            <div class="content-footer">
+                <a href="{{url_for('main.add_photo')}}">
+                    <img src="{{url_for('static', filename='/img/index/add-photo.png')}}" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var $menuButton = $(".menu-button");
+        var $menuPopup = $(".menu-popup");
+
+        $menuButton.click(function() {
+            console.log('anjai')
+            $menuPopup.toggleClass("active");
+        });
+
+        var refferer = document.referrer;
+            if (refferer){
+                
+            }else {
+                window.location.href = "{{url_for('main.intro')}}";
+            }
+    });
+</script>
+</html>
+
+<!-- 
+
+<i class="fa-solid fa-bars"></i>
+
+ -->

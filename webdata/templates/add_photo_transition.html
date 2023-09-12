@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua&family=Kalam&family=Source+Sans+3:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_photo_transition.css')}}">
+</head>
+<body>
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="content-header">
+                Adjust your color!
+            </div>
+
+            <div class="content-body">
+                <div id="image-comparison-slider">
+                    <div id="beforeImage">
+                        <img src="{{url_for('static', filename='/uploads')}}/{{results.result_link_name}}" alt="after">
+                    </div>
+                    <div id="afterImage">
+                        <img src="{{url_for('static', filename='/uploads')}}/{{results.source_link_name}}" alt="before">
+                    </div>
+                    <input type="range" min="0" max="100" value="50" aria-label="Percentage of before photo shown" class="slider"/>
+                    <div class="slider-line" aria-hidden="true"></div>
+                    <div class="slider-button" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 256 256">
+                        <rect width="256" height="256" fill="none"></rect>
+                        <line x1="128" y1="40" x2="128" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                        <line x1="96" y1="128" x2="16" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                        <polyline points="48 160 16 128 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+                        <line x1="160" y1="128" x2="240" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                        <polyline points="208 96 240 128 208 160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+                    </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-footer">
+               <div class="footer-wrapper">
+                    <a class="button-footer" href="#">
+                        <img src="{{url_for('static', filename='img/add_photo_transition/share.png')}}" alt="">
+                    </a>
+                    <a class="button-footer" href="#">
+                        <img src="{{url_for('static', filename='img/add_photo_transition/favourite.png')}}" alt="">
+                    </a>
+                    <a class="button-footer" href="{{url_for('main.photo_library')}}">
+                        <img src="{{url_for('static', filename='img/add_photo_transition/done.png')}}" alt="">
+                    </a>
+               </div> 
+            </div>
+        </div>
+    </div>
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const container = $('#image-comparison-slider');
+            const slider = $('.slider');
+    
+            slider.on('input', function() {
+                const position = $(this).val();
+                container.css('--position', position + '%');
+            });
+        });
+    </script>
+    
+</body>
+</html>
