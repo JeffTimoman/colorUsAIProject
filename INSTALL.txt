@@ -4,7 +4,6 @@ Step by step installasi :
 3. Pastikan bahwa PIP python telah terinstall pada laptop kalian pasti udah sih.
 4. Jalankan : pip install virtualenv
 5. Jalankan : py -m venv webEnv 
-              python -m venv webEnv
 6. Jalankan : webEnv\Scripts\activate
 7. Buka File config.py pada folder webdata, lalu isi API_TOKEN kalian denegan yang kalian pakai.
 8. Buka PHPMyAdmin kalian lalu buat database namanya colorus
