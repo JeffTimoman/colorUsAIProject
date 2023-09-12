@@ -31,6 +31,8 @@ Step by step installasi dengan install github juga:
 14. Jalankan : py app.py
 15. Moga-moga jalan
 
+//Kalo error pas tahap enam, ganti venv jadi virtualenv dan py jadi python
+
 Buat Jalanin aplikasinya : 
 1. Pindah ke path aplikasi kalian, cari foldernya yang terdapat app.py dan webEnv
 2. webEnv\Scripts\activate
