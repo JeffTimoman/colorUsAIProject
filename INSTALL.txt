@@ -1,7 +1,7 @@
 Step by step installasi : 
 1. Buka command prompt pada laptop kalian
 2. Pindah path folder ke folder yg terdapat install.py ini
-3. Pastikan bahwa PIP python telah terinstall pada laptop kalian
+3. Pastikan bahwa PIP python telah terinstall pada laptop kalian pasti udah sih.
 4. Jalankan : py -m pip install --user virtualenv
 5. Jalankan : py -m venv webEnv
 6. Jalankan : webEnv\Scripts\activate
